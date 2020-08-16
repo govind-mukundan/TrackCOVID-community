@@ -4,10 +4,11 @@ import Locize from 'i18next-locize-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import en from './translations/en'
 import es from './translations/es'
+import ml from './translations/ml'
 
 const locizeProductId = process.env['REACT_APP_LOCIZE_PRODUCT_ID']
 
-const resources = locizeProductId ? undefined : { en, es }
+const resources = locizeProductId ? undefined : { ml, en }
 
 const i18nSetup = locizeProductId
   ? i18n
@@ -25,6 +26,7 @@ i18nSetup.init({
   },
   load: 'all',
   fallbackLng: 'en',
+  lng:'ml',
   keySeparator: false, // we do not use keys in form messages.welcome
   interpolation: {
     escapeValue: false // react already safes from xss
